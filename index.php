@@ -64,6 +64,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript"  href="./js/scripts.js"></script>
 	<link rel="shortcut icon" href="img/logo.png"/>
+	<!--Cambio codigo-->
 </head>
 <style>
 	body{
