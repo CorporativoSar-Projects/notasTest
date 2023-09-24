@@ -124,8 +124,10 @@
 				<br><br><br><br>-->
 		</div>
 	</div>
+	<!--Cambio codigo 4-->
 </body>
 <script>
+	
 	
 	function nuevo() {
 		alert("Por favor, escribe al administrador del sistema o contacta al correo lsanchezc@corporativosaarme.com");
