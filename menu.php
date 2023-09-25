@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   		<a class="navbar-brand" href="#"><img src="img/SAR svg/1.svg" width="100" height="100" alt="" style="margin-left: 100px !important;"></a>
+		 
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -12,11 +13,22 @@
         			<a class="nav-link" href="gestionarservicios.php">Gestionar servicios</a>
       			</li>
       			<li class="nav-item" id="mLeads" style="margin-left: 100px !important;">
-        			<a class="nav-link" href="prospeccion.php">Prospección</a>
+        			<a class="nav-link" href="prospeccion.php">Prospección </a>
       			</li>
-            <li class="nav-item" id="mWebSite" style="margin-left: 100px !important;">
+            
+				<li class="nav-item" id="mWebSite" style="margin-left: 100px !important;">
               <a class="nav-link" href="https://www.corporativosaarme.com">Ir a sitio web</a>
             </li>
-    		</ul>
+			
+			<li class="nav-item"  style="margin-left: 100px !important;">
+              <a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion<img src="img/cerrar-sesion" width="auto" height="auto"  style="margin-right: 100px !important;"></a>
+			  
+            </li>
+			
+    		
+		</ul>
   		</div>
 	</nav>
+
+
+	

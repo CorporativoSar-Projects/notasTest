@@ -1,9 +1,9 @@
 <?php
 	error_reporting(0);
 	//conexion en local
-	//$conexion=mysqli_connect("localhost", "root",'', "notasinnsol");
+	$conexion=mysqli_connect("localhost", "root",'', "notasinnsol");
 	//conexion a produccion
-	$conexion=mysqli_connect("localhost", "corpo240_admin", 'INNSOL"="#()', "corpo240_InnsolNotas");
+	//$conexion=mysqli_connect("localhost", "corpo240_admin", 'INNSOL"="#()', "corpo240_InnsolNotas");
 	$user=$_POST['username'];
 	$pass=$_POST['pass'];
 	$cifra = $pass;
