@@ -97,7 +97,7 @@
                             <label for="nomEmp" id="labRegForm">Contraseña</label>
                         </td>
                         <td>
-                            <input type="password" id="Pass" name="Pass" required="true">
+						<input type="password" id="password" name="pass" placeholder="Contraseña" required="true">
                         </td>
                     </tr>
 					<tr>
