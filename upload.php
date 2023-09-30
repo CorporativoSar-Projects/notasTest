@@ -7,6 +7,7 @@ $nomEmp =$_POST['nomEmp'];
 $codigoEmp =$_POST['codigoEmp'];
 $nomRep =$_POST['nomRep'];
 $CorreoE =$_POST['CorreoE'];
+$Pass =$_POST['Pass'];
 $telCont =$_POST['telCont'];
 $sitWeb =$_POST['sitWeb'];
 $dirEmp =$_POST['dirEmp'];

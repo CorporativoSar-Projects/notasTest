@@ -94,6 +94,14 @@
                     </tr>
 					<tr>
                         <td>
+                            <label for="nomEmp" id="labRegForm">Contraseña</label>
+                        </td>
+                        <td>
+						<input type="password" id="password" name="pass" placeholder="Contraseña" required="true">
+                        </td>
+                    </tr>
+					<tr>
+                        <td>
                             <label for="nomEmp" id="labRegForm">Teléfono de contacto</label>
                         </td>
                         <td>
