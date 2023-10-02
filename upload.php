@@ -60,7 +60,7 @@ $queU2="INSERT INTO etiquetas VALUES ( 'Fecha','Folio','Tipo de nota a generar',
 //Guardar Variables en la base de perzonalizado
 $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
 }
-        if ($conexion->query($queU) ($conexion->query($queU2)) {
+        if ($conexion->query($queU) and $conexion->query($queU2)) {
 		echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.');</script>";
 	    }
 	    else{
