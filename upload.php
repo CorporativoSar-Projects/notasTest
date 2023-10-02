@@ -39,7 +39,7 @@ $IDServ=$_POST['IDServ'];
         $file = $_FILES['file'];
         $filename = $file['name'];
         $nimetype = $file['type'];
-        $allowed_types = array("image/jpg", "image/jpeg", "image/png");}
+        $allowed_types = array("image/jpg", "image/jpeg", "image/png");
         if (!in_array($nimetype, $allowed_types)){
              header("location:index.php");
         }
@@ -55,7 +55,7 @@ $IDServ=$_POST['IDServ'];
 
         //Guardar variables en la base de estandar
 if($etiquetaEmp == 'standardLabelsChoose'){
-$queU2="INSERT INTO etiquetas  VALUES ( 'Fecha','Folio','Tipo de nota a generar', 'Nombre del cliente','Correo del cliente','Teléfono del cliente','Domicilio del cliente','Fecha de inicio','Fecha de término','Servicio','Cantidad', 'Añadir servicio', 'Consultar','Eliminar servicio','Nombre de Servicio', 'Descripción','Precio Unitario', 'Catálogo de servicios','ID de servicio');";
+$queU2="INSERT INTO etiquetas VALUES ( 'Fecha','Folio','Tipo de nota a generar', 'Nombre del cliente','Correo del cliente','Teléfono del cliente','Domicilio del cliente','Fecha de inicio','Fecha de término','Servicio','Cantidad', 'Añadir servicio', 'Consultar','Eliminar servicio','Nombre de Servicio', 'Descripción','Precio Unitario', 'Catálogo de servicios','ID de servicio');";
 } else if($etiquetaEmp == 'customLabelsChoose'){
 //Guardar Variables en la base de perzonalizado
 $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
@@ -67,7 +67,7 @@ $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien',
 		echo "Error al actualizar los datos, verifica los datos e inténtalo de nuevo.".mysqli_error($conexion);
 		header('Location: registroEmpresarial.php');
 	    }
-    //}
+    }
     else{
     	echo "<script>alert('No hay archivo, comunicate con soporte');</script>";
     }
