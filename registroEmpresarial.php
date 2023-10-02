@@ -86,7 +86,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Correo de contacto</label>
+                            <label for="corCont" id="labRegForm">Correo de contacto</label>
                         </td>
                         <td>
                             <input type="text" id="corCont" name="CorreoE" placeholder="Ej. admin@innsolcorp.com" required="true">
@@ -94,7 +94,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Contraseña</label>
+                            <label for="password" id="labRegForm">Contraseña</label>
                         </td>
                         <td>
 						<input type="password" id="password" name="pass" placeholder="Contraseña" required="true">
@@ -102,7 +102,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Teléfono de contacto</label>
+                            <label for="telCont" id="labRegForm">Teléfono de contacto</label>
                         </td>
                         <td>
                             <input type="number" id="telCont" name="telCont" placeholder="Ej. 5589547249" required="true" pattern="[0-9]+" step="1" maxlength="15" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/><p style="font-size: 12px;">(Máximo 15 dígitos)</p>
@@ -110,7 +110,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Logotipo</label>
+                            <label for="file" id="labRegForm">Logotipo</label>
                         </td>
                         <td>
                             <input type="file"  name="file" placeholder="Ej. formato .jpg .png" required="true">
@@ -118,7 +118,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Sitio web oficial</label>
+                            <label for="sitWeb" id="labRegForm">Sitio web oficial</label>
                         </td>
                         <td>
                             <input type="text" id="sitWeb" name="sitWeb" placeholder="Ej. www.inncorp.com" required="true">
@@ -126,7 +126,7 @@
                     </tr>
 					<tr>
                         <td>
-                            <label for="nomEmp" id="labRegForm">Dirección</label>
+                            <label for="dirEmp" id="labRegForm">Dirección</label>
                         </td>
                         <td>
                             <input type="text" id="dirEmp" name="dirEmp" placeholder="Ej. Copernico 23, Miguel Hidalgo, CDMX, 02380" required="true">
@@ -134,7 +134,7 @@
 					</tr>
 					<tr>
 						<td>
-                            <label for="nomEmp" id="labRegForm">Tema a elegir</label>
+                            <label for="temaEmp" id="labRegForm">Tema a elegir</label>
                         </td>
                         <td>
                             <select name="temaEmp" id="temaEmp" onchange="themeTest()">
@@ -148,13 +148,13 @@
                     <tr>
 						<td>
 						
-                            <label for="nomEmp" id="labRegForm">Configuración de etiquetas</label>
+                            <label for="etiquetaEmp" id="labRegForm">Configuración de etiquetas</label>
                         </td>
                         <td>
 						
                             <select name="etiquetaEmp" id="etiquetaEmp" onchange="labelChoose()">
 								
-							<option value="standardLabelsChoose">Standard</option>
+							<option value="standardLabelsChoose" selected >Standard</option>
 									
 								<option value="customLabelsChoose">Personalizadas</option>
 							</select>
@@ -321,7 +321,7 @@
                     
 					<tr>
                         <td>
-                            <br><br><br><input type="submit" name="registrarEmp" value="Registrar empresa" class="registrarEmp" id="registrarEmp">
+                            <br><br><br><input type="submit"  value="Registrar empresa" class="registrarEmp" id="registrarEmp">
                         </td>  
 						<td>
 							<br><br><br><input type="button" onclick="nuevo();" value="Necesito ayuda" id="regBt">
@@ -335,6 +335,8 @@
 	</div>
 </body>
 <script>
+	
+
 	function nuevo() {
 		alert("Por favor, escribe al administrador del sistema o contacta al correo contacto@corporativosaarme.com");
 	}
