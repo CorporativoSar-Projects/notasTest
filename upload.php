@@ -60,7 +60,7 @@ $IDServv="ID del Servicio";
         $file = $_FILES['file'];
         $filename = $file['name'];
         $nimetype = $file['type'];
-        $allowed_types = array("image/jpg", "image/jpeg", "image/png");//}
+        $allowed_types = array("image/jpg", "image/jpeg", "image/png");}
         if (!in_array($nimetype, $allowed_types)){
              header("location:index.php");
         }
@@ -76,8 +76,7 @@ $IDServv="ID del Servicio";
 
         //Guardar variables en la base de estandar
 if($etiquetaEmp == 'standardLabelsChoose'){
-    //Guardar Variables en la base Standar
-$queU2="INSERT INTO etiquetas VALUES ( '$Fechaa','$Folioo','$TipoNotaa', '$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInii','$FechaTermm','$Servicioo','$Cantidadd', '$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
+$queU2="INSERT INTO etiquetas  VALUES ( 'Fecha','Folio','Tipo de nota a generar', 'Nombre del cliente','Correo del cliente','Teléfono del cliente','Domicilio del cliente','Fecha de inicio','Fecha de término','Servicio','Cantidad', 'Añadir servicio', 'Consultar','Eliminar servicio','Nombre de Servicio', 'Descripción','Precio Unitario', 'Catálogo de servicios','ID de servicio');";
 } else if($etiquetaEmp == 'customLabelsChoose'){
 //Guardar Variables en la base de perzonalizado
 $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
