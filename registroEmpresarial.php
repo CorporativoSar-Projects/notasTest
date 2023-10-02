@@ -153,11 +153,13 @@
                         <td>
 						
                             <select name="etiquetaEmp" id="etiquetaEmp" onchange="labelChoose()">
-								<option value="standardLabelsChoose">Standard</option>
+								
+							<option value="standardLabelsChoose">Standard</option>
 									
 								<option value="customLabelsChoose">Personalizadas</option>
 							</select>
 							<br><br>
+
 							<div style="border:1px solid black; display:none;" id="customLabelsDivEmp">
 							    <table style="width:100% !important;">
 							        <tr>
@@ -312,13 +314,12 @@
 							                <input type="text" id="IDServ" name="IDServ" required="true">
 							            </td>
 							        </tr>
-									
-									
-							    </table>
+				                    </table>
 							</div>
                         </td>
                     </tr>
-                    <tr>
+                    
+					<tr>
                         <td>
                             <br><br><br><input type="submit" name="registrarEmp" value="Registrar empresa" class="registrarEmp" id="registrarEmp">
                         </td>  
