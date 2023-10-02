@@ -60,7 +60,7 @@ $IDServv="ID del Servicio";
         $file = $_FILES['file'];
         $filename = $file['name'];
         $nimetype = $file['type'];
-        $allowed_types = array("image/jpg", "image/jpeg", "image/png");}
+        $allowed_types = array("image/jpg", "image/jpeg", "image/png");//}
         if (!in_array($nimetype, $allowed_types)){
              header("location:index.php");
         }
