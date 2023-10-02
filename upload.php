@@ -34,12 +34,33 @@ $Descripcion=$_POST['Descripcion'];
 $PrecioUni=$_POST['PrecioUni'];
 $CatServ=$_POST['CatServ'];
 $IDServ=$_POST['IDServ'];
+//para guardar estandar
+$etiquetaEmp = $_POST['etiquetaEmp'];
+$Fechaa = "Fecha";
+$Folioo="Folio";
+$TipoNotaa="Tipo de Nota";
+$NomClienn="Nombre del Cliente";
+$CorreoClienn="Correo del Cliente";
+$TelefonoClienn="Teléfono del Cliente";
+$DomiClienn="Domicilio del Cliente";
+$FechaInii="Fecha de Inicio";
+$FechaTermm="Fecha de Termino";
+$Servicioo="Servicio";
+$Cantidadd="Cantidad";
+$AñadirServv="Añadir Servicio";
+$Consultarr="Consultar";
+$EliServv="Eliminar Servicio";
+$NomSerr="Nombre del Servicio";
+$Descripcionn="Descripción";
+$PrecioUnii="Precio Unitario";
+$CatServv="Catalogo de Servicios";
+$IDServv="ID del Servicio";
 
     if (isset($_FILES['file'])){
         $file = $_FILES['file'];
         $filename = $file['name'];
         $nimetype = $file['type'];
-        $allowed_types = array("image/jpg", "image/jpeg", "image/png");}
+        $allowed_types = array("image/jpg", "image/jpeg", "image/png");//}
         if (!in_array($nimetype, $allowed_types)){
              header("location:index.php");
         }
@@ -55,7 +76,8 @@ $IDServ=$_POST['IDServ'];
 
         //Guardar variables en la base de estandar
 if($etiquetaEmp == 'standardLabelsChoose'){
-$queU2="INSERT INTO etiquetas  VALUES ( 'Fecha','Folio','Tipo de nota a generar', 'Nombre del cliente','Correo del cliente','Teléfono del cliente','Domicilio del cliente','Fecha de inicio','Fecha de término','Servicio','Cantidad', 'Añadir servicio', 'Consultar','Eliminar servicio','Nombre de Servicio', 'Descripción','Precio Unitario', 'Catálogo de servicios','ID de servicio');";
+    //Guardar Variables en la base Standar
+$queU2="INSERT INTO etiquetas VALUES ( '$Fechaa','$Folioo','$TipoNotaa', '$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInii','$FechaTermm','$Servicioo','$Cantidadd', '$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
 } else if($etiquetaEmp == 'customLabelsChoose'){
 //Guardar Variables en la base de perzonalizado
 $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
@@ -67,7 +89,7 @@ $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien',
 		echo "Error al actualizar los datos, verifica los datos e inténtalo de nuevo.".mysqli_error($conexion);
 		header('Location: registroEmpresarial.php');
 	    }
-    //}
+    }
     else{
     	echo "<script>alert('No hay archivo, comunicate con soporte');</script>";
     }
