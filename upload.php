@@ -12,6 +12,11 @@ $telCont =$_POST['telCont'];
 $sitWeb =$_POST['sitWeb'];
 $dirEmp =$_POST['dirEmp'];
 $temaEmp =$_POST['temaEmp'];
+$logo =$_POST['file'];
+$pass= cifrarSHA256($cifra);
+function cifrarSHA256($texto) {
+	return hash('sha256', $texto);
+}
 
 //Guardar los valores del formulario perzonalizadas etiquetas
 $etiquetaEmp = $_POST['etiquetaEmp'];
@@ -71,7 +76,7 @@ $IDServv="ID del Servicio";
         }
         move_uploaded_file($file['tmp_name'], $codigoEmp."/".$filename);
         rename( $codigoEmp."/".$filename, $codigoEmp."/"."logo.png");
-        $queU="INSERT INTO EmpresaC values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', ' ', '$sitWeb', '$telCont', '$dirEmp');" ;
+        $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$pass', '$sitWeb', '$telCont', '$dirEmp', $logo);";
       
 
         //Guardar variables en la base de estandar
