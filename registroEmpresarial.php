@@ -138,7 +138,7 @@
                         </td>
                         <td>
                             <select name="temaEmp" id="temaEmp" onchange="themeTest()">
-								<option value="">Standard</option>	
+								<option value="CSS/styleSAR.css">Standard</option>	
 								<option value="CSS/customStyle_Turism.css">Turism</option>
 								<option value="CSS/customStyle_Tech.css">Tech</option>								
 							</select>							
@@ -152,12 +152,16 @@
                         </td>
                         <td>
 						
-                            <select name="etiquetaEmp" id="etiquetaEmp" onchange="labelChoose()">
+                        <select name="etiquetaEmp" id="etiquetaEmp" onchange="labelChoose()">
 								
-							<option value="standardLabelsChoose" selected >Standard</option>
+							<option disabled selected="">Selecione una etiqueta</option>
+
+							<option name="Standar" value="standardLabelsChoose">Standard</option>
 									
-								<option value="customLabelsChoose">Personalizadas</option>
-							</select>
+							<option name="Personalizado" value="customLabelsChoose">Personalizadas</option>
+
+						</select>
+							
 							<br><br>
 
 							<div style="border:1px solid black; display:none;" id="customLabelsDivEmp">
@@ -374,16 +378,19 @@
 	}
 	
 	function labelChoose() {
-		var customLabelsChoosed = document.getElementById('customLabelsDivEmp');
-		var selLabels = document.getElementById('etiquetaEmp').selectedIndex;
-		var textCustomLabels = document.getElementById('etiquetaEmp').options;
-		if (textCustomLabels[selLabels].text == "Standard") {
-			customLabelsChoosed.style.display="none";
-		}
-		else {
-			customLabelsChoosed.style.display="block";
-		}
-	}
+    console.log('labelChoose function called'); // Verifica si la función se llama.
+    var customLabelsChoosed = document.getElementById('customLabelsDivEmp');
+    var selLabels = document.getElementById('etiquetaEmp').selectedIndex;
+    var textCustomLabels = document.getElementById('etiquetaEmp').options;
+    if (textCustomLabels[selLabels].text == "Standard") {
+        console.log('standardLabelsChoose'); // Verifica si se selecciona "Standard".
+        customLabelsChoosed.style.display = "none";
+    } else {
+        console.log('customLabelsChoose'); // Verifica si se selecciona otra opción.
+        customLabelsChoosed.style.display = "block";
+    }
+}
+
 </script>
 </html>
 <?php
