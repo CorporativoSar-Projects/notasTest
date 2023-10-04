@@ -21,7 +21,12 @@
             </li>
 			
 			<li class="nav-item"  style="margin-left: 100px !important;">
-              <a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion<img src="img/cerrar-sesion" width="20" height="20"  style="margin-right: 100px !important;"></a>
+			<div style="display: flex; align-items: center;">
+    <img src="img/cerrar-sesion" width="18" height="18" style="margin-right: 10px;">
+    <a class="nav-link" href="cerrar_sesion.php" style="margin-right: 20px;">Cerrar Sesión</a>
+</div>
+
+
 			  
             </li>
 			
