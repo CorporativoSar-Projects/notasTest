@@ -20,6 +20,7 @@ $temaEmp =$_POST['temaEmp'];
 
 //Guardar los valores del formulario perzonalizadas etiquetas
 $etiquetaEmp = $_POST['etiquetaEmp'];
+$Personalizado=$_POST['Personalizado'];
 $Fecha = $_POST['Fecha'];
 $Folio=$_POST['Folio'];
 $TipoNota=$_POST['TipoNota'];
@@ -42,6 +43,7 @@ $IDServ=$_POST['IDServ'];
 
 //para guardar estandar
 $etiquetaEmp = $_POST['etiquetaEmp'];
+$Standar=$_POST['Standar'];
 $Fechaa = "Fecha";
 $Folioo="Folio";
 $TipoNotaa="Tipo de Nota";
@@ -80,22 +82,23 @@ $IDServv="ID del Servicio";
         rename( $codigoEmp."/".$filename, $codigoEmp."/"."logo.png");
         $urllogo=$codigoEmp.'/logo.png';
         $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo');";
-        if ($conexion->query($queU)) 
-        {
-            echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
-        }
+        
 
         //Guardar variables en la base de estandar
-if($etiquetaEmp == 'standardLabelsChoose')
+if($etiquetaEmp == "standardLabelsChoose")
 {
     $queU2="INSERT INTO etiquetas  VALUES( '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInin','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
 } 
-else if($etiquetaEmp == 'customLabelsChoose')
+else if($etiquetaEmp == "customLabelsChoose")
 {
 //Guardar Variables en la base de perzonalizado
     $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
 }
 
+if ($conexion->query($queU) and $conexion->query($queU2)) 
+        {
+            echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
+        }
 else
 {
 	echo "Error al actualizar los datos, verifica los datos e inténtalo de nuevo.".mysqli_error($conexion);
