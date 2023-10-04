@@ -138,7 +138,7 @@
                         </td>
                         <td>
                             <select name="temaEmp" id="temaEmp" onchange="themeTest()">
-								<option value="CSS/estilos.css">Standard</option>	
+								<option value="CSS/styleSAR.css">Standard</option>	
 								<option value="CSS/customStyle_Turism.css">Turism</option>
 								<option value="CSS/customStyle_Tech.css">Tech</option>								
 							</select>							
