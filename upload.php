@@ -4,10 +4,17 @@
 
 include 'conexion.php';
 $nomEmp =$_POST['nomEmp'];
-$codigoEmp =$_POST['codigoEmp'];
 $nomRep =$_POST['nomRep'];
+$ApePater=$_POST['ApePater'];
+$ApeMater=$_POST['ApeMater'];
 $CorreoE =$_POST['CorreoE'];
 $Pass =md5($_POST['pass']);
+$codigoEmp =$_POST['codigoEmp'];
+$Desarrollador=$_POST['Desarrollador'];
+$Notas=$_POST['Notas'];
+$Completo=$_POST['Completo'];
+
+
 $telCont =$_POST['telCont'];
 $sitWeb =$_POST['sitWeb'];
 $dirEmp =$_POST['dirEmp'];
@@ -20,7 +27,7 @@ $temaEmp =$_POST['temaEmp'];
 
 //Guardar los valores del formulario perzonalizadas etiquetas
 $etiquetaEmp = $_POST['etiquetaEmp'];
-$Personalizado=$_POST['Personalizado'];
+//$Personalizado=$_POST['Personalizado'];
 $Fecha = $_POST['Fecha'];
 $Folio=$_POST['Folio'];
 $TipoNota=$_POST['TipoNota'];
@@ -43,7 +50,7 @@ $IDServ=$_POST['IDServ'];
 
 //para guardar estandar
 $etiquetaEmp = $_POST['etiquetaEmp'];
-$Standar=$_POST['Standar'];
+//$Standar=$_POST['Standar'];
 $Fechaa = "Fecha";
 $Folioo="Folio";
 $TipoNotaa="Tipo de Nota";
@@ -81,24 +88,29 @@ $IDServv="ID del Servicio";
         move_uploaded_file($file['tmp_name'], $codigoEmp."/".$filename);
         rename( $codigoEmp."/".$filename, $codigoEmp."/"."logo.png");
         $urllogo=$codigoEmp.'/logo.png';
-        $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo');";
+       $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo');";
+
+       $queU5="INSERT INTO usuarioss  values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Desarrollador]','$_REQUEST[Notas]','$_REQUEST[Completo]');";
         
+        
+       
 
         //Guardar variables en la base de estandar
 if($etiquetaEmp == "standardLabelsChoose")
 {
-    $queU2="INSERT INTO etiquetas  VALUES( '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInin','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
+   // $queU2="INSERT INTO etiquetas  VALUES ('Fecha','Folio','Tipo de Nota', 'Nombre de cliente', 'Correo del Cliente', 'Correo del Cliente', 'Teléfono del Cliente', 'Domicilio del Clietne','Fecha de Inicio', 'Fecha de Termino','Servicio', 'Cantidad', 'Añadir Servicio', 'Consultar', 'Eliminar Servicio', 'Nombre del Servicio','Descripción', 'Precio Unitario', 'Catalogo de Servicios', 'ID del Servicio');";
+    $queU2="INSERT INTO etiquetas  VALUES('$nomEmp', '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInin','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
 } 
 else if($etiquetaEmp == "customLabelsChoose")
 {
 //Guardar Variables en la base de perzonalizado
-    $queU2="INSERT INTO etiquetas VALUES( '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
+    $queU2="INSERT INTO etiquetas VALUES('$nomEmp', '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
 }
 
 if ($conexion->query($queU) and $conexion->query($queU2)) 
-        {
+{
             echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
-        }
+}
 else
 {
 	echo "Error al actualizar los datos, verifica los datos e inténtalo de nuevo.".mysqli_error($conexion);

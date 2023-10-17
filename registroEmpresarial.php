@@ -24,6 +24,22 @@
 	<script type="text/javascript"  href="./js/scripts.js"></script>
 	<link rel="shortcut icon" href="img/1.png" />
 	<!--Cambio 2-->
+	<script>
+        function handleCheckboxClick(checkbox) {
+            var checkboxes = document.getElementsByName("opcion[]");
+            if (checkbox.value === "Completo" && checkbox.checked) {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i] !== checkbox) {
+                        checkboxes[i].disabled = true;
+                    }
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].disabled = false;
+                }
+            }
+        }
+    </script>
 </head>
 <style>
 	body{
@@ -32,7 +48,16 @@
 	p{
 		font-size: 40px;
 	}
+	.checkbox-group {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .checkbox-group label {
+            margin-right: 10px;
+        }
 </style>
+
 <body style="font-family:arial;">
 	<header id="headerRegEmp">
 		<img src="img/SAR svg/1.svg" id="logo">
@@ -78,12 +103,32 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="nomRep" id="labRegForm">Nombre de representante</label>
+                            <label for="ApePater" id="labRegForm">Apellido Paterno del Representante</label>
                         </td>
                         <td>
-                            <input type="text" id="nomRep" name="nomRep" placeholder="Ej. Luis Sánchez" required="true">
+                            <input type="text" id="ApePater" name="ApePater" placeholder="Ej. García" required="true">
                         </td>
                     </tr>
+                    
+					<tr>
+                        <td>
+                            <label for="ApeMater" id="labRegForm">Apellido Materno del Representante</label>
+                        </td>
+                        <td>
+                            <input type="text" id="ApeMater" name="ApeMater" placeholder="Ej. Juárez" required="true">
+                        </td>
+                    </tr>
+
+					<tr>
+                        <td>
+                            <label for="nomRep" id="labRegForm">Nombre(s) del representante</label>
+                        </td>
+                        <td>
+                            <input type="text" id="nomRep" name="nomRep" placeholder="Ej. Esteban Santiago" required="true">
+                        </td>
+                    </tr>
+
+
 					<tr>
                         <td>
                             <label for="corCont" id="labRegForm">Correo de contacto</label>
@@ -132,6 +177,32 @@
                             <input type="text" id="dirEmp" name="dirEmp" placeholder="Ej. Copernico 23, Miguel Hidalgo, CDMX, 02380" required="true">
                         </td>
 					</tr>
+
+					<tr>
+                        <td>
+                            <label for="Tipo" id="labRegForm">Tipo Contratación</label>
+                        </td>
+                        <td>
+						
+						<div class="checkbox-group">
+						<label>
+                <input type="hidden" name="Desarrollador" value="no">
+                <input type="checkbox" name="Desarrollador" value="Si" onclick="handleCheckboxClick(this)"> Desarrollador
+            </label>
+            <label>
+                <input type="hidden" name="Notas" value="no">
+                <input type="checkbox" name="Notas" value="Si" onclick="handleCheckboxClick(this)"> Notas
+            </label>
+            <label>
+                <input type="hidden" name="Completo" value="no">
+                <input type="checkbox" name="Completo" value="si" onclick="handleCheckboxClick(this)"> Completos
+            </label>
+              
+        </div>
+   
+                        </td>
+					</tr>
+
 					<tr>
 						<td>
                             <label for="temaEmp" id="labRegForm">Tema a elegir</label>
@@ -161,7 +232,6 @@
 							<option name="Personalizado" value="customLabelsChoose">Personalizadas</option>
 
 						</select>
-							
 							<br><br>
 
 							<div style="border:1px solid black; display:none;" id="customLabelsDivEmp">
@@ -318,11 +388,8 @@
 							                <input type="text" id="IDServ" name="IDServ" required="true">
 							            </td>
 							        </tr>
-				                    </table>
-							</div>
-                        </td>
-                    </tr>
-                    
+				                </table>
+							<br><br>
 					<tr>
                         <td>
                             <br><br><br><input type="submit"  value="Registrar empresa" class="registrarEmp" id="registrarEmp">
@@ -389,6 +456,9 @@
         console.log('customLabelsChoose'); // Verifica si se selecciona otra opción.
         customLabelsChoosed.style.display = "block";
     }
+     
+	
+    
 }
 
 </script>
