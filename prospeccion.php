@@ -44,71 +44,14 @@
 			<tr>
 				<td colspan="3" style="border: 0px !important">
 					<div align="left">
-						<?php
-							$queryCL="SELECT ProspectosS.Nom_Prosp, ProspectosS.Correo_C, ProspectosS.Numero, ProspectosS.Estado_C, UsuariosS.Correo, UsuariosS.NombreU  FROM ProspectosS JOIN UsuariosS on UsuariosS.Correo = '$varsesion' ;";
-							$prospectoCL=$conexion->query($queryCL);
-							$contLeadCL=mysqli_affected_rows($conexion);
-							$contMyLeadCL=0;						
-							while ($valor=mysqli_fetch_array($prospectoCL))
-							{
-								if ($valor[UsuariosS.Correo]==$varsesion) {
-									$contMyLeadCL++;
-								}
-							}
-						?>
+						
 					<h6 style="color:;">Total de leads del equipo: <b><?php echo $contLeadCL; ?></b></h6>
 					<h6 style="color: red;">Mis leads: <b><?php echo $contMyLeadCL; ?></b></h6><br>
 					</div>
 				</td>
 			</tr>
-			<tr>
-				<?php
-					$cabecera = array('NOMBRE','DOMICILIO','INDUSTRIA','TELÉFONO','CORREO','REPRESENTANTE','ORIGEN','SERVICIO(S)','ESTATUS','AGENTE');
-					foreach ($cabecera as $fila)
-					{
-						echo "<td><b>".$fila."</b></td>";
-					}
-				?>			
-			</tr>			
-			<?php
-				$query="SELECT ProspectosS.Nom_Prosp, ProspectosS.Correo_C, ProspectosS.Numero, 
-				ProspectosS.Estado_C, UsuariosS.Correo, UsuariosS.NombreU  FROM ProspectosS JOIN UsuariosS on UsuariosS.Correo = '$varsesion';";
-				$prospecto=$conexion->query($query);
-				$contLeads=mysqli_affected_rows($conexion);	
-				while ($valor=mysqli_fetch_array($prospecto))
-				{
-					if ($valor['NombreU']==$varsesion)
-					{
-						echo 
-						"<table>
-						<tr id='leadRowleadPicklist".$valor['id_p']."'><td>".$valor['id_p']."
-							</td><td>".$valor['Nom_Prosp']."
-							</td><td>".$valor['Correo_C']."							
-							</td><td>".$valor['Numero']."
-							</td><td>".$valor['Estado_C']."
-							</td><td>".$valor['Correo']."
-							</td><td>".$valor['NombreU']."
-							</td><td>".$valor['origen']."
-							</td><td>".$valor['servicio_interes']."
-							</td><td>";include 'leadPicklist.php';
-							echo "</td></tr>";
-						echo "<script>var a=document.getElementById('leadPicklist".$valor[id_p]."').value;
-						b=document.getElementById('leadRowleadPicklist".$valor[id_p]."');
-						if(a=='nuevo' || a=='primCotacto'){
-							b.style.backgroundColor='#ECECEC';
-						}
-						else if(a=='proceso'){
-							b.style.backgroundColor='#FFE779';
-						}
-						else if(a=='calificado'){
-							b.style.backgroundColor='#96FF8E';
-						}
-						else if(a=='noCalificado'){
-							b.style.backgroundColor='#FFA8A8';
-						}</script>";
-					}
-				}
-			?>
+					
+			
 		</table>
 	</div>
 </body>

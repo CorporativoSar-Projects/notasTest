@@ -35,6 +35,8 @@
 	}
 </style>
 <body onload="changeLabels();">
+<?php include 'menu.php'; ?>
+	<?php include 'menuAcciones.php'; ?>
 	
 		<table id="leadsTable">
 			<tr>
@@ -49,10 +51,11 @@
 				</td>
 			</tr>
             <tr>
-                <td>Id Cliente</td>
-                <td>Id Usuario</td>
-                <td>Id Total</td>
-                <td>PDF</td>
+                <td>ID Cliente</td>
+                <td>ID Usuario</td>
+                <td>ID Total</td>
+				<td>Fecha de Inicio</td>
+				<td>PDF <img src="img/logopdf.PNG" width="25" height="25"></td>
             </tr>
 			
 				<?php
@@ -97,12 +100,12 @@
 	
 
 	function verConsulta() {
-		window.open("searchProspect.php", "ventanaEmergente", "width=700,height=500,resizable=no");
+		window.open("searchNotas.php", "ventanaEmergente", "width=700,height=500,resizable=no");
 	}
 
 	function changeLabels() {
-		
-		document.getElementById('labelEliminar').innerHTML="Editar Nota";
+		document.getElementById('labelAñadir').innerHTML="";
+		document.getElementById('labelEliminar').innerHTML="Eliminar Nota";
 		document.getElementById('labelConsultar').innerHTML="Buscar Nota";
 	}
 	var currentLoc = window.location.href;
