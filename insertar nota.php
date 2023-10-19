@@ -170,7 +170,7 @@
 	<table>
 		<tr>
 			<td>
-				<form action="pdfGen.php" method="POST">
+				<form action="pdfGen.php" method="POST"> 
 				<input type="number" name="folio" style="display: none;" value="<?php echo $folio; ?>"/><br>
 				<input type="text" name="nomCliente" style="display: none;" value="<?php echo $nomCliente; ?>"/>
 				<input type="text" name="domCliente" style="display: none;" value="<?php echo $domCliente; ?>"/>

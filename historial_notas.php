@@ -11,6 +11,9 @@
 		die();
 	}
 	global $contLeads;
+	//Poner variables para jalar de la base de datos de pdfgen
+	global $nomCliente,$domCliente;
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,26 +54,34 @@
 				</td>
 			</tr>
             <tr>
-                <td>ID Cliente</td>
-                <td>ID Usuario</td>
-                <td>ID Total</td>
-				<td>Fecha de Inicio</td>
-				<td>PDF <img src="img/logopdf.PNG" width="25" height="25"></td>
+                <td>Correo Cliente</td>
+                <td>Usuario que Elaboro</td>
+                <td>Monto de Nota</td>
+				<td>Fecha de Registro</td>
+				
+	
+	
+				<td><a href="pdfGen.php" class="btn btn-success"Generar PDF<i class="far fa-file-pdf"> <img src="img/logopdf.PNG" width="25" height="25"></td>
             </tr>
 			
 				<?php
            
-                $sql="SELECT * FROM notass";
+               // $sql="SELECT * FROM notass";
+				$sql = "SELECT * FROM notass WHERE ID_Us = '$varsesion'";
                 $result=mysqli_query($conexion,$sql);
                 while($mostrar=mysqli_fetch_array($result)){	
+					$nomCliente=$mostrar['IDCliente'];
+					$domCliente=$mostrar['ID_US'];
+					$dartext="pdfGen.php?nomCliente=".$nomCliente."&domCliente=".$domCliente.""
 				?>			
 			
 <tr>
 <td><?php echo $mostrar['IDCliente']?></td>
 <td><?php echo $mostrar['ID_Us']?></td>
 <td><?php echo $mostrar['Total']?></td>
-<td><?php echo $mostrar['FECHAI']?></td>
-<td><?php echo $mostrar['PDF']?></td>
+<td><?php echo $mostrar['FechaRegistro']?></td>
+<td><a href="<?php echo $dartext;?>" class="btn btn-success"Generar PDF<i class="far fa-file-pdf"> <img src="img/logopdf.PNG" width="25" height="25"></td>
+
 </tr>
 <?php 
 }

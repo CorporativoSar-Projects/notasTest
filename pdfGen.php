@@ -3,6 +3,7 @@
 	$dir="Cuauhtémoc, Ciudad de México";
 	$correo="contacto@corporativosaarme.com";
 	$pagina="https://corporativosaarme.com/";
+	//si no funciona POST cambiar a GET y en insertar nota linea 173
 	$ign=$_POST['firma'];
 	$nomCliente=$_POST['nomCliente'];
 	$domCliente=$_POST['domCliente'];
