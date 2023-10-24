@@ -236,12 +236,12 @@
 
 							<div style="border:1px solid black; display:none;" id="customLabelsDivEmp">
 							    <table style="width:100% !important;">
-							        <tr>
+								<tr>
 							            <td>
 							                <label for="Fecha">Fecha</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Fecha" name="Fecha" required="true">
+							                <input type="text" id="Fecha" name="Fecha" required="true" class="campoPersonalizado" >
 							            </td>
 							        </tr>
 							        <tr>
@@ -249,7 +249,7 @@
 							                <label for="Folio">Folio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Folio" name="Folio" required="true">
+							                <input type="text" id="Folio" name="Folio" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -257,7 +257,7 @@
 							                <label for="TipoNota">Tipo de nota a generar</label>
 							            </td>
 							            <td>
-							                <input type="text" id="TipoNota" name="TipoNota" required="true">
+							                <input type="text" id="TipoNota" name="TipoNota" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -265,7 +265,7 @@
 							                <label for="NomClien">Nombre del cliente</label>
 							            </td>
 							            <td>
-							                <input type="text" id="NomClien" name="NomClien" required="true">
+							                <input type="text" id="NomClien" name="NomClien" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -273,7 +273,7 @@
 							                <label for="CorreoClien">Correo del cliente</label>
 							            </td>
 							            <td>
-							                <input type="text" id="CorreoClien" name="CorreoClien" required="true">
+							                <input type="text" id="CorreoClien" name="CorreoClien" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -281,7 +281,7 @@
 							                <label for="TelefonoClien">Teléfono del cliente</label>
 							            </td>
 							            <td>
-							                <input type="text" id="TelefonoClien" name="TelefonoClien" required="true">
+							                <input type="text" id="TelefonoClien" name="TelefonoClien" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -289,7 +289,7 @@
 							                <label for="DomiClien">Domicilio del cliente</label>
 							            </td>
 							            <td>
-							                <input type="text" id="DomiClien" name="DomiClien" required="true">
+							                <input type="text" id="DomiClien" name="DomiClien" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -297,7 +297,7 @@
 							                <label for="FechaIni">Fecha de inicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="FechaIni" name="FechaIni" required="true">
+							                <input type="text" id="FechaIni" name="FechaIni" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -305,7 +305,7 @@
 							                <label for="FechaTerm">Fecha de término</label>
 							            </td>
 							            <td>
-							                <input type="text" id="FechaTerm" name="FechaTerm" required="true">
+							                <input type="text" id="FechaTerm" name="FechaTerm" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -313,7 +313,7 @@
 							                <label for="Servicio">Servicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Servicio" name="Servicio" required="true">
+							                <input type="text" id="Servicio" name="Servicio" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -321,7 +321,7 @@
 							                <label for="Cantidad">Cantidad</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Cantidad" name="Cantidad" required="true">
+							                <input type="text" id="Cantidad" name="Cantidad" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -329,7 +329,7 @@
 							                <label for="AñadirServ">Añadir servicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="AñadirServ" name="AñadirServ" required="true">
+							                <input type="text" id="AñadirServ" name="AñadirServ" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -337,7 +337,7 @@
 							                <label for="Consultar">Consultar</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Consultar" name="Consultar" required="true">
+							                <input type="text" id="Consultar" name="Consultar" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -345,7 +345,7 @@
 							                <label for="EliServ">Eliminar servicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="EliServ" name="EliServ" required="true">
+							                <input type="text" id="EliServ" name="EliServ" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -353,7 +353,7 @@
 							                <label for="NomSer">Nombre de Servicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="NomSer" name="NomSer" required="true">
+							                <input type="text" id="NomSer" name="NomSer" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -361,7 +361,7 @@
 							                <label for="Descripcion">Descripción</label>
 							            </td>
 							            <td>
-							                <input type="text" id="Descripcion" name="Descripcion" required="true">
+							                <input type="text" id="Descripcion" name="Descripcion" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -369,7 +369,7 @@
 							                <label for="PrecioUni">Precio Unitario</label>
 							            </td>
 							            <td>
-							                <input type="text" id="PrecioUni" name="PrecioUni" required="true">
+							                <input type="text" id="PrecioUni" name="PrecioUni" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -377,7 +377,7 @@
 							                <label for="CatServ">Catálogo de servicios</label>
 							            </td>
 							            <td>
-							                <input type="text" id="CatServ" name="CatServ" required="true">
+							                <input type="text" id="CatServ" name="CatServ" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 							        <tr>
@@ -385,7 +385,7 @@
 							                <label for="IDServ">ID de servicio</label>
 							            </td>
 							            <td>
-							                <input type="text" id="IDServ" name="IDServ" required="true">
+							                <input type="text" id="IDServ" name="IDServ" required="true" class="campoPersonalizado">
 							            </td>
 							        </tr>
 				                </table>
@@ -457,9 +457,25 @@
         customLabelsChoosed.style.display = "block";
     }
      
-	
-    
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+			const selectEtiquetaEmp = document.getElementById('etiquetaEmp');
+			const customLabelsDivEmp = document.getElementById('customLabelsDivEmp');
+			const camposPersonalizados = document.querySelectorAll('.campoPersonalizado');
+
+			function updateRequiredAndVisibility() {
+				const isPersonalizado = selectEtiquetaEmp.value === 'customLabelsChoose';
+				customLabelsDivEmp.style.display = isPersonalizado ? "block" : "none";
+				camposPersonalizados.forEach(campo => {
+					campo.required = isPersonalizado;
+				});
+			}
+			
+			selectEtiquetaEmp.addEventListener('change', updateRequiredAndVisibility);
+			
+			// Asegúrate de que el estado requerido esté configurado correctamente cuando se carga la página
+			updateRequiredAndVisibility();
+	});
 
 </script>
 </html>

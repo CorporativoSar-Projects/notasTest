@@ -99,7 +99,7 @@ $IDServv="ID del Servicio";
 if($etiquetaEmp == "standardLabelsChoose")
 {
    // $queU2="INSERT INTO etiquetas  VALUES ('Fecha','Folio','Tipo de Nota', 'Nombre de cliente', 'Correo del Cliente', 'Correo del Cliente', 'Teléfono del Cliente', 'Domicilio del Clietne','Fecha de Inicio', 'Fecha de Termino','Servicio', 'Cantidad', 'Añadir Servicio', 'Consultar', 'Eliminar Servicio', 'Nombre del Servicio','Descripción', 'Precio Unitario', 'Catalogo de Servicios', 'ID del Servicio');";
-    $queU2="INSERT INTO etiquetas  VALUES('$nomEmp', '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInin','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
+    $queU2="INSERT INTO etiquetas  VALUES('$nomEmp', '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInii','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
 } 
 else if($etiquetaEmp == "customLabelsChoose")
 {
