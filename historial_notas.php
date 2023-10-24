@@ -22,19 +22,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styleSAR.css">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<title>Historial de Notas</title>
 </head>
 <style>	
-	#leadsTable td{
-		border: 1px solid black !important;
-	}
 	#leadsTable{
+		margin:150px auto;
 		border: 0px solid black;
 		font-size: 12px;
 		width: 100% !important;
+		display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+		
+	}
+	table{
+		
+		background-color: white;
+		text-align: left;
+	}
+	th,td{
+		border: solid 1px black;
+		padding: 10;
+	}
+	thead{
+		background-color:#F9A615;
+		border-bottom: solid 5px #0f362d;
+		color:white;
+	}
+	tr:nth-child(even){
+		background-color: #ddd;
+
 	}
 	.btn-custom {
   background-color: transparent; /* Fondo transparente */
@@ -46,9 +68,7 @@
 <body onload="changeLabels();">
 <?php include 'menu.php'; ?>
 	
-	
-		<table id="leadsTable">
-			<tr>
+<tr>
 				<td colspan="13" style="border: 0px !important"><h3><br>Base de datos de Notas<br><br></h3></td>
 			</tr>
 			<tr>
@@ -59,16 +79,17 @@
 					</div>
 				</td>
 			</tr>
-            <tr>
-                <td>Correo Cliente</td>
-                <td>Usuario que Elaboro</td>
-                <td>Monto de Nota</td>
-				<td>Fecha de Registro</td>
-				<td>Generar PDF</td>  
-				<td><a href="pdfGen.php" <img src="img/logopdf.PNG" width="25" height="25"></td>
-            </tr>
+		<div id="leadsTable">
 			
-				<?php
+			<table>
+				<thead>
+				<tr>
+				<th>Correo Cliente</th><th>Usuario que Elaboro</th><th>Monto de Nota</th><th>Fecha de Registro</th><th>Generar PDF<a href="pdfGen.php" <img src="img/logopdf.PNG" width="25" height="25"></th>
+			     </tr>
+			</thead>
+            
+        
+			<?php
            
                // $sql="SELECT * FROM notass";
 				$sql = "SELECT * FROM notass WHERE ID_Us = '$varsesion'";
@@ -113,24 +134,16 @@
 					"&tipoNota=".$tipoNota."&folio=".$folio."&fecha=".$fecha."&subtotal=".$subtotal."&iva=".$iva."&riva=".$riva."&risr=".$risr.
 					"&total=".$total.""
 
-				?>			
-			
+				?>	
+	
 <tr>
-<td><?php echo $mostrar['IDCliente']?></td>
-<td><?php echo $mostrar['ID_Us']?></td>
-<td><?php echo $mostrar['Total']?></td>
-<td><?php echo $mostrar['FechaRegistro']?></td>
-<td>
-  <a href="<?php echo $dartext;?>" class="btn btn-custom"><i class="far fa-file-pdf"></i> 
-    <img src="img/logopdf.PNG" width="25" height="25">
-  </a>
-</td>
-
+<td><?php echo $mostrar['IDCliente']?></td><td><?php echo $mostrar['ID_Us']?></td><td><?php echo $mostrar['Total']?></td><td><?php echo $mostrar['FechaRegistro']?></td><td><a href="<?php echo $dartext;?>" class="btn btn-custom"><i class="far fa-file-pdf"></i> <img src="img/logopdf.PNG" width="25" height="25"></a></td>
 </tr>
 <?php 
 }
 ?>
 </table>
+</div>
 	</div>
 </body>
 <script>
