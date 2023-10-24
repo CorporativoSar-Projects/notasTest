@@ -109,8 +109,10 @@ else if($etiquetaEmp == "customLabelsChoose")
 
 if ($conexion->query($queU) and $conexion->query($queU2)) 
 {
-            echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
-}
+       echo "<script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
+        //$mensaje = "DATOS GUARDADOS CORRECTAMENTE. Ya puedes iniciar sesión.";
+        }
+
 else
 {
 	echo "Error al actualizar los datos, verifica los datos e inténtalo de nuevo.".mysqli_error($conexion);

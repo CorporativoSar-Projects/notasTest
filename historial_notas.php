@@ -64,10 +64,8 @@
                 <td>Usuario que Elaboro</td>
                 <td>Monto de Nota</td>
 				<td>Fecha de Registro</td>
-				
-	
-	
-				<td><a href="pdfGen.php" Generar PDF <img src="img/logopdf.PNG" width="25" height="25"></td>
+				<td>Generar PDF</td>  
+				<td><a href="pdfGen.php" <img src="img/logopdf.PNG" width="25" height="25"></td>
             </tr>
 			
 				<?php
@@ -78,6 +76,7 @@
                 while($mostrar=mysqli_fetch_array($result)){	
 					$nomCliente=$mostrar['IDCliente'];
 					$domCliente=$mostrar['ID_US'];
+
 					$dartext="pdfGen.php?nomCliente=".$nomCliente."&domCliente=".$domCliente.""
 				?>			
 			
@@ -87,7 +86,7 @@
 <td><?php echo $mostrar['Total']?></td>
 <td><?php echo $mostrar['FechaRegistro']?></td>
 <td>
-  <a href="<?php echo $dartext;?>" class="btn btn-custom">Generar PDF<i class="far fa-file-pdf"></i> 
+  <a href="<?php echo $dartext;?>" class="btn btn-custom"><i class="far fa-file-pdf"></i> 
     <img src="img/logopdf.PNG" width="25" height="25">
   </a>
 </td>

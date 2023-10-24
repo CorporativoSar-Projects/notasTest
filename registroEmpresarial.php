@@ -63,7 +63,11 @@
 		<img src="img/SAR svg/1.svg" id="logo">
 		<!--<a href="./carritodecompras.php" title="Ver carrito de compras">
 			<img src="./imagenes/carrito.png">
+			<div id="mensaje">
+			<?php echo $mensaje; ?>
 		</a>-->
+		
+    </div>
 	</header>
 	<br><br><br>
 	<div id="divmain">
@@ -404,6 +408,7 @@
 			<br><br><br>
 		</div>
 	</div>
+	
 </body>
 <script>
 	
