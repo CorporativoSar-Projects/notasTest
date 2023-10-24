@@ -36,6 +36,12 @@
 		font-size: 12px;
 		width: 100% !important;
 	}
+	.btn-custom {
+  background-color: transparent; /* Fondo transparente */
+  color: #000; /* Color de texto (negro en este caso) */
+  /* Otros estilos si es necesario */
+}
+
 </style>
 <body onload="changeLabels();">
 <?php include 'menu.php'; ?>
@@ -61,7 +67,7 @@
 				
 	
 	
-				<td><a href="pdfGen.php" class="btn btn-success"Generar PDF <img src="img/logopdf.PNG" width="25" height="25"></td>
+				<td><a href="pdfGen.php" Generar PDF <img src="img/logopdf.PNG" width="25" height="25"></td>
             </tr>
 			
 				<?php
@@ -80,7 +86,11 @@
 <td><?php echo $mostrar['ID_Us']?></td>
 <td><?php echo $mostrar['Total']?></td>
 <td><?php echo $mostrar['FechaRegistro']?></td>
-<td><a href="<?php echo $dartext;?>" class="btn btn-success"Generar PDF<i class="far fa-file-pdf"> <img src="img/logopdf.PNG" width="25" height="25"></td>
+<td>
+  <a href="<?php echo $dartext;?>" class="btn btn-custom">Generar PDF<i class="far fa-file-pdf"></i> 
+    <img src="img/logopdf.PNG" width="25" height="25">
+  </a>
+</td>
 
 </tr>
 <?php 
