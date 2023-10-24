@@ -88,9 +88,10 @@ $IDServv="ID del Servicio";
         move_uploaded_file($file['tmp_name'], $codigoEmp."/".$filename);
         rename( $codigoEmp."/".$filename, $codigoEmp."/"."logo.png");
         $urllogo=$codigoEmp.'/logo.png';
-       $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo');";
+       
+    $queU="INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo');";
 
-       $queU5="INSERT INTO usuarioss  values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Desarrollador]','$_REQUEST[Notas]','$_REQUEST[Completo]');";
+    $queU5="INSERT INTO usuarioss  values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Desarrollador]','$_REQUEST[Notas]','$_REQUEST[Completo]');";
         
         
        

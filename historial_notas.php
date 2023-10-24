@@ -76,8 +76,43 @@
                 while($mostrar=mysqli_fetch_array($result)){	
 					$nomCliente=$mostrar['IDCliente'];
 					$domCliente=$mostrar['ID_US'];
+					$idservicio=$mostrar['NomSer'];
+					$idservicio2=$mostrar['NomSer2'];
+					$idservicio3=$mostrar['NomSer3'];
+					$idservicio4=$mostrar['NomSer4'];
+					$cantidad=intval($mostrar['Cantidad']);
+					$cantidad2=intval($mostrar['Cantidad2']);
+					$cantidad3=intval($mostrar['Cantidad3']);
+					$cantidad4=intval($mostrar['Cantidad4']);
+					$descripcion=$mostrar['descripcion'];
+					$descripcion2=$mostrar['descripcion2'];
+					$descripcion3=$mostrar['descripcion3'];
+					$descripcion4=$mostrar['descripcion4'];
+					$precio=$mostrar['precio'];
+					$precio2=$mostrar['precio2'];
+					$precio3=$mostrar['precio3'];
+					$precio4=$mostrar['precio4'];
+					$importe=$mostrar['importe'];
+					$importe2=$mostrar['importe2'];
+					$importe3=$mostrar['importe3'];
+					$importe4=$mostrar['importe4'];
+					$tipoNota=$mostrar['TipoNota'];
+					$folio=$mostrar['FOLIO'];
+					$fecha=$mostrar['fecha'];
+					$subtotal=$mostrar['subtotal'];
+					$iva=$mostrar['IVA'];
+					$riva=$mostrar['RIVA'];
+					$risr=$mostrar['ISR'];
+					$total=$mostrar['Total'];
 
-					$dartext="pdfGen.php?nomCliente=".$nomCliente."&domCliente=".$domCliente.""
+					$dartext="pdfGen.php?nomCliente=".$nomCliente."&domCliente=".$domCliente."&idservicio=".$idservicio."&idservicio2=".$idservicio2."&idservicio3=".$idservicio3."&idservicio4=".$idservicio4.
+					"&cantidad=".$cantidad."&cantidad2=".$cantidad2."&cantidad3=".$cantidad3."&cantidad4=".$cantidad4.
+					"&descripcion=".$descripcion."&descripcion2=".$descripcion2."&descripcion3=".$descripcion3."&descripcion4=".$descripcion4.
+                    "&precio=".$precio."&precio2=".$precio2."&precio3=".$precio3."&precio4=".$precio4.
+					"&importe=".$importe."&importe2=".$importe2."&importe3=".$importe3."&importe4=".$importe4.
+					"&tipoNota=".$tipoNota."&folio=".$folio."&fecha=".$fecha."&subtotal=".$subtotal."&iva=".$iva."&riva=".$riva."&risr=".$risr.
+					"&total=".$total.""
+
 				?>			
 			
 <tr>
