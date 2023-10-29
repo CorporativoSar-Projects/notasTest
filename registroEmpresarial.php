@@ -191,11 +191,11 @@
 						<div class="checkbox-group">
 						<label>
                 <input type="hidden" name="Desarrollador" value="no">
-                <input type="checkbox" name="Desarrollador" value="Si" onclick="handleCheckboxClick(this)"> Desarrollador
+                <input type="checkbox" name="Desarrollador" value="si" onclick="handleCheckboxClick(this)"> Desarrollador
             </label>
             <label>
                 <input type="hidden" name="Notas" value="no">
-                <input type="checkbox" name="Notas" value="Si" onclick="handleCheckboxClick(this)"> Notas
+                <input type="checkbox" name="Notas" value="si" onclick="handleCheckboxClick(this)"> Notas
             </label>
             <label>
                 <input type="hidden" name="Completo" value="no">
