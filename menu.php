@@ -6,23 +6,30 @@
   		</button>
   		<div class="collapse navbar-collapse" id="navbarNav">
     		<ul class="navbar-nav">
-      			<li class="nav-item" id="mInicio" style="margin-left: 150px !important;">
+
+      			<li class="nav-item" id="mInicio" style="margin-left: 75px !important;height: 70px;">
         			<a class="nav-link" href="notas.php">Inicio<span class="sr-only">(current)</span></a>
-      			</li>      			
-      			<li class="nav-item" id="mManageServices" style="margin-left: 100px !important;">
+      			</li>    
+
+      			<li class="nav-item" id="mManageServices" style="margin-left: 75px !important;height: 70px;">
         			<a class="nav-link" href="gestionarservicios.php">Gestionar servicios</a>
       			</li>
-      			<li class="nav-item" id="mLeads" style="margin-left: 100px !important;">
+
+				  <li class="nav-item" id="mManageServices" style="margin-left: 75px !important;">
+        			<a class="nav-link" href="historial_notas.php">Historial de Notas</a>
+      			</li>
+
+      			<li class="nav-item" id="mLeads" style="margin-left: 90px !important;">
         			<a class="nav-link" href="prospeccion.php">Prospección </a>
       			</li>
             
-				<li class="nav-item" id="mWebSite" style="margin-left: 100px !important;">
-              <a class="nav-link" href="https://www.corporativosaarme.com">Ir a sitio web</a>
+				<li class="nav-item" id="mWebSite" style="margin-left: 80px !important;">
+              <a class="nav-link" href="https://www.corporativosaarme.com">Ir al sitio web</a>
             </li>
 			
 			<li class="nav-item"  style="margin-left: 100px !important;">
 			<div style="display: flex; align-items: center;">
-    <img src="img/cerrar-sesion" width="18" height="18" style="margin-right: 10px;">
+    <img src="img/cerrar-sesion" width="18" height="18" style="margin-right: 50px;">
     <a class="nav-link" href="cerrar_sesion.php" style="margin-right: 20px;">Cerrar Sesión</a>
 </div>
 
