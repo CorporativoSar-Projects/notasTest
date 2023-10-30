@@ -29,21 +29,22 @@
 	<title>Historial de Notas</title>
 </head>
 <style>	
+
 	#leadsTable{
-		margin:150px auto;
+		margin:400px auto;
 		border: 0px solid black;
 		font-size: 12px;
 		width: 100% !important;
 		display: flex;
         justify-content: center;
         align-items: center;
-        height: 200px;
+        height: 400px;
 		
 	}
 	table{
 		
 		background-color: white;
-		text-align: left;
+		text-align: center;
 	}
 	th,td{
 		border: solid 1px black;
@@ -63,25 +64,20 @@
   color: #000; /* Color de texto (negro en este caso) */
   /* Otros estilos si es necesario */
 }
-
 </style>
 <body onload="changeLabels();">
 <?php include 'menu.php'; ?>
-	
-<tr>
-				<td colspan="13" style="border: 0px !important"><h3><br>Base de datos de Notas<br><br></h3></td>
-			</tr>
-			<tr>
-				<td colspan="3" style="border: 0px !important">
-					<div align="left">
-					<h6 style="color:;">Total de leads del equipo: <b><?php echo $contLeadCL; ?></b></h6>
-					<h6 style="color: red;">Mis leads: <b><?php echo $contMyLeadCL; ?></b></h6><br>
-					</div>
-				</td>
-			</tr>
+<br><br>
+<div>
+		<h1><center>Base de Datos Notas</center></h1>
+	</div>
+
+
+
 		<div id="leadsTable">
+		
 			
-			<table>
+		<table>
 				<thead>
 				<tr>
 				<th>Correo Cliente</th><th>Usuario que Elaboro</th><th>Monto de Nota</th><th>Fecha de Registro</th><th>Generar PDF<a href="pdfGen.php" <img src="img/logopdf.PNG" width="25" height="25"></th>
