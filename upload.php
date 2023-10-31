@@ -79,14 +79,17 @@ if (isset($_FILES['file'])) {
     if (!in_array($nimetype, $allowed_types)) {
         header("location:index.php");
     }
-    if (!is_dir("$codigoEmp")) {
-        mkdir("$codigoEmp", 0777);
-        echo $codigoEmp;
-    }
 
-    move_uploaded_file($file['tmp_name'], $codigoEmp . "/" . $filename);
-    rename($codigoEmp . "/" . $filename, $codigoEmp . "/" . "logo.png");
-    $urllogo = $codigoEmp . '/logo.png';
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+    $newFilename = $codigoEmp . '.' . $extension;
+    
+    if (!is_dir("logos")) {
+        mkdir("logos", 0777);
+    }
+    
+    move_uploaded_file($file['tmp_name'], "logos/" . $newFilename);
+    $urllogo = "logos/" . $newFilename;
+    
 
     $conexion->begin_transaction();
 
@@ -115,7 +118,9 @@ try {
 
     // Si todo ha ido bien, commit la transacción
     $conexion->commit();
-    echo "<br>Datos insertados correctamente <script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.'.$etiquetaEmp);</script>";
+    $codigoEmpresaJs = json_encode($codigoEmp);
+    echo "<br>Datos insertados correctamente <script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.' + $codigoEmpresaJs);</script>";
+    
 } catch (Exception $e) {
     // Si hay un error, rollback la transacción
     $conexion->rollback();
