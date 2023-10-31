@@ -38,7 +38,7 @@
 	global $serviceArray;
 	$serviceArray = array();
 	$cont=1;
-	$rs = mysqli_query($conexion, "SELECT FOLIO FROM NotasS	WHERE FechaRegistro = (SELECT MAX(FechaRegistro) FROM NotasS where ID_Us = '$varsesion');");
+	$rs = mysqli_query($conexion, "SELECT FOLIO FROM notass	WHERE FechaRegistro = (SELECT MAX(FechaRegistro) FROM notass where ID_Us = '$varsesion');");
 	if ($row = mysqli_fetch_row($rs)) {
 		$id = trim($row[0]);
 		//cho "Valor de id:".$id;

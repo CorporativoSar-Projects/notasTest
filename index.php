@@ -11,7 +11,7 @@
 	function cifrarSHA256($texto) {
 		return hash('sha256', $texto);
 	}
-	$queU=("SELECT Correo FROM UsuariosS  WHERE Correo='$user' and Pass='$pass'");
+	$queU=("SELECT Correo FROM usuarioss  WHERE Correo='$user' and Pass='$pass'");
 	$result=mysqli_query($conexion,$queU);
 	if (mysqli_num_rows($result)>0) {
 	//	echo "<script>alert('Num Cols: $x');</script>";
@@ -21,7 +21,7 @@
 		/*echo "Valor 1 de S_SESSION: ".$_SESSION['$user'];*/
 		
 	}
-	$rs = mysqli_query($conexion, "SELECT Id_empresa FROM UsuariosS  WHERE Correo='$user';");
+	$rs = mysqli_query($conexion, "SELECT Id_empresa FROM usuarioss  WHERE Correo='$user';");
 	if ($row = mysqli_fetch_row($rs)) {
 		$id = trim($row[0]);
 		$_SESSION['$CodiEmp'] = $id;
@@ -31,8 +31,8 @@
 		$id=0;
 	}
 	$cod=$_SESSION['$CodiEmp'];
-	$fl = mysqli_query($conexion, "SELECT FOLIO FROM NotasS	WHERE FechaRegistro = (
-		SELECT MAX(FechaRegistro) FROM NotasS where ID_Us = '$user');");
+	$fl = mysqli_query($conexion, "SELECT FOLIO FROM notass	WHERE FechaRegistro = (
+		SELECT MAX(FechaRegistro) FROM notass where ID_Us = '$user');");
 	if ($row = mysqli_fetch_row($fl)) {
 		$folio = trim($row[0]);
 		/*echo "Valor de id:".$id;*/
@@ -44,7 +44,7 @@
 		$_SESSION['$folio'] = $folio;
 
 	}	
-	$tm = mysqli_query($conexion, "SELECT Tema From EmpresaC Where CodigoE = '$cod';");
+	$tm = mysqli_query($conexion, "SELECT Tema From empresac Where CodigoE = '$cod';");
 	if ($row = mysqli_fetch_row($tm)) {
 		$tem = trim($row[0]);
 		$_SESSION['$Tema'] = $tem;

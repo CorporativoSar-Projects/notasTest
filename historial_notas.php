@@ -130,6 +130,8 @@
 					"&tipoNota=".$tipoNota."&folio=".$folio."&fecha=".$fecha."&subtotal=".$subtotal."&iva=".$iva."&riva=".$riva."&risr=".$risr.
 					"&total=".$total.""
 
+					
+
 				?>	
 	
 <tr>
