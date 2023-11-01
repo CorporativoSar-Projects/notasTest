@@ -114,13 +114,15 @@ try {
     }
     if (!$conexion->query($queU2)) {
         throw new Exception("Error al insertar en etiquetas: " . $conexion->error);
+        
     }
 
     // Si todo ha ido bien, commit la transacción
     $conexion->commit();
     $codigoEmpresaJs = json_encode($codigoEmp);
     echo "<br>Datos insertados correctamente <script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.' + $codigoEmpresaJs);</script>";
-    
+    echo '<br><a href="registroEmpresarial.php">Volver a la página de registro</a>';
+
 } catch (Exception $e) {
     // Si hay un error, rollback la transacción
     $conexion->rollback();

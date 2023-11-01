@@ -92,7 +92,8 @@
                 $result=mysqli_query($conexion,$sql);
                 while($mostrar=mysqli_fetch_array($result)){	
 					$nomCliente=$mostrar['IDCliente'];
-					$domCliente=$mostrar['ID_US'];
+					$nomUsuario=$mostrar['ID_US'];
+					$domCliente=$mostrar['DomClien'];
 					$idservicio=$mostrar['NomSer'];
 					$idservicio2=$mostrar['NomSer2'];
 					$idservicio3=$mostrar['NomSer3'];
@@ -122,7 +123,7 @@
 					$risr=$mostrar['ISR'];
 					$total=$mostrar['Total'];
 
-					$dartext="pdfGen.php?nomCliente=".$nomCliente."&domCliente=".$domCliente."&idservicio=".$idservicio."&idservicio2=".$idservicio2."&idservicio3=".$idservicio3."&idservicio4=".$idservicio4.
+					$dartext="pdfGen.php?nomCliente=".$nomCliente."&nomUsurio=".$nomUsuario."&domCliente=".$domCliente."&idservicio=".$idservicio."&idservicio2=".$idservicio2."&idservicio3=".$idservicio3."&idservicio4=".$idservicio4.
 					"&cantidad=".$cantidad."&cantidad2=".$cantidad2."&cantidad3=".$cantidad3."&cantidad4=".$cantidad4.
 					"&descripcion=".$descripcion."&descripcion2=".$descripcion2."&descripcion3=".$descripcion3."&descripcion4=".$descripcion4.
                     "&precio=".$precio."&precio2=".$precio2."&precio3=".$precio3."&precio4=".$precio4.
@@ -130,12 +131,11 @@
 					"&tipoNota=".$tipoNota."&folio=".$folio."&fecha=".$fecha."&subtotal=".$subtotal."&iva=".$iva."&riva=".$riva."&risr=".$risr.
 					"&total=".$total.""
 
-					
-
 				?>	
 	
 <tr>
-<td><?php echo $mostrar['IDCliente']?></td><td><?php echo $mostrar['ID_Us']?></td><td><?php echo $mostrar['Total']?></td><td><?php echo $mostrar['FechaRegistro']?></td><td><a href="<?php echo $dartext;?>" class="btn btn-custom"><i class="far fa-file-pdf"></i> <img src="img/logopdf.PNG" width="25" height="25"></a></td>
+<td><?php echo $mostrar['IDCliente']?></td><td><?php echo $mostrar['ID_Us']?></td><td><?php echo $mostrar['Total']?></td><td><?php echo $mostrar['FechaRegistro']?></td><td><a href="<?php echo $dartext;?>pdfGen.php" class="btn btn-custom"><i class="far fa-file-pdf"></i> <img src="img/logopdf.PNG" width="25" height="25"></a></td>
+
 </tr>
 <?php 
 }
