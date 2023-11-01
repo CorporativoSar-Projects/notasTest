@@ -8,11 +8,7 @@
 	$nomRep = $_POST['nomRep'];
 	$CorreoE = $_POST['CorreoE'];
 	$telCont = $_POST['telCont'];
-	$cifra = $pass;
-	$pass= cifrarSHA256($cifra);
-	function cifrarSHA256($texto) {
-		return hash('sha256', $texto);
-	}
+	
 ?>
 <!DOCTYPE html>
 <html lang="es">

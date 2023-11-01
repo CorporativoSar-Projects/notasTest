@@ -8,7 +8,12 @@ $nomRep = $_POST['nomRep'];
 $ApePater = $_POST['ApePater'];
 $ApeMater = $_POST['ApeMater'];
 $CorreoE = $_POST['CorreoE'];
-$Pass = md5($_POST['pass']);
+$Pass = $_POST['pass'];
+    $cifra = $Pass;
+	$Pass= cifrarSHA256($cifra);
+	function cifrarSHA256($texto) {
+		return hash('sha256', $texto);
+	}
 $codigoEmp = $_POST['codigoEmp'];
 $Desarrollador = $_POST['Desarrollador'];
 $Notas = $_POST['Notas'];
@@ -121,7 +126,7 @@ try {
     $conexion->commit();
     $codigoEmpresaJs = json_encode($codigoEmp);
     echo "<br>Datos insertados correctamente <script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.' + $codigoEmpresaJs);</script>";
-    echo '<br><a href="registroEmpresarial.php">Volver a la página de registro</a>';
+    //header('Location:index.php');
 
 } catch (Exception $e) {
     // Si hay un error, rollback la transacción
