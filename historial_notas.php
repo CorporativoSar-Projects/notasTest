@@ -69,7 +69,8 @@
 <?php include 'menu.php'; ?>
 <br><br>
 <div>
-		<h1><center>Base de Datos Notas</center></h1>
+		<h1><center>Historial De Notas</center></h1>
+		<br><br>
 	</div>
 
 

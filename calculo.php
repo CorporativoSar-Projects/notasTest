@@ -10,10 +10,10 @@
 	$fechaR=date('Y-m-d H:i:s');
 	$fechaI=$_GET['fechaI'];
 	$fechaT=$_GET['fechaT'];	
-	$idservicio=$_GET['idservicio'];
-	$idservicio2=$_GET['idservicio2'];
-	$idservicio3=$_GET['idservicio3'];
-	$idservicio4=$_GET['idservicio4'];	
+	$idservicio=urldecode($_GET['idservicio']);
+	$idservicio2=urldecode($_GET['idservicio2']);
+	$idservicio3=urldecode($_GET['idservicio3']);
+	$idservicio4=urldecode($_GET['idservicio4']);	
 	$cantidad=$_GET['cantidad'];
 	$cantidad2=$_GET['cantidad2'];
 	$cantidad3=$_GET['cantidad3'];
@@ -171,7 +171,7 @@
 						<h5>Correo del Cliente&nbsp&nbsp
 					</td>
 					<td>
-						<input type="text" name="corrCliente" required="true"/></h5>
+						<input type="text" name="corrCliente" required="true" value="<?php echo$corrCliente;?>" /></h5>
 					</td>
 				</tr>
 				<tr>
@@ -179,7 +179,7 @@
 						<h5>Telefono del cliente&nbsp&nbsp
 					</td>
 					<td>
-						<input type="tel" name="telefono" required="true"/></h5>
+						<input type="tel" name="telefono" required="true" value="<?php echo$telefono;?>"/></h5>
 					</td>
 					<td>
 						<h5>Domicilio del cliente&nbsp&nbsp
@@ -193,13 +193,13 @@
 						<h5>Fecha de Inicio&nbsp&nbsp
 					</td>
 					<td>
-						<input type="date" name="fechaI" required="true"></h5>
+						<input type="date" name="fechaI" required="true" value="<?php echo$fechaI;?>"></h5>
 					</td>
 					<td>
 						<h5>Fecha de Termino&nbsp&nbsp
 					</td>
 					<td>
-						<input type="date" name="fechaT" required="true"></h5>
+						<input type="date" name="fechaT" required="true" value="<?php echo$fechaT;?>" ></h5>
 					</td>
 				</tr>
 			</table>

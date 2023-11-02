@@ -165,7 +165,7 @@
 								$q=$conexion->query($selectServices);
 								while ($valor=mysqli_fetch_array($q))
 								{
-									echo "<option value=".$valor['NombrePS']."
+									echo "<option value=".urlencode($valor['NombrePS'])."
 										>".$valor['NombrePS']."</option>";
 									$serviceArray[$valor['NombrePS']]=$valor['PrecioU'];
 								}
@@ -186,7 +186,7 @@
 								$q=$conexion->query($selectServices);
 								while ($valor=mysqli_fetch_array($q))
 								{
-									echo "<option value=".$valor['NombrePS']."
+									echo "<option value=".urlencode($valor['NombrePS'])."
 										>".$valor['NombrePS']."</option>";
 									$serviceArray[$valor['NombrePS']]=$valor['PrecioU'];						
 								}
@@ -207,7 +207,7 @@
 								$q=$conexion->query($selectServices);
 								while ($valor=mysqli_fetch_array($q))
 								{
-									echo "<option value=".$valor['NombrePS']."
+									echo "<option value=".urlencode($valor['NombrePS'])."
 										>".$valor['NombrePS']."</option>";
 									$serviceArray[$valor['NombrePS']]=$valor['PrecioU'];
 								}
@@ -228,7 +228,7 @@
 								$q=$conexion->query($selectServices);
 								while ($valor=mysqli_fetch_array($q))
 								{
-									echo "<option value=".$valor['NombrePS']."
+									echo "<option value=".urlencode($valor['NombrePS'])."
 										>".$valor['NombrePS']."</option>";
 									$serviceArray[$valor['NombrePS']]=$valor['PrecioU'];
 								}
