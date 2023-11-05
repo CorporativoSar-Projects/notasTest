@@ -9,11 +9,12 @@ $ApePater = $_POST['ApePater'];
 $ApeMater = $_POST['ApeMater'];
 $CorreoE = $_POST['CorreoE'];
 $Pass = $_POST['pass'];
-    $cifra = $Pass;
-	$Pass= cifrarSHA256($cifra);
-	function cifrarSHA256($texto) {
-		return hash('sha256', $texto);
-	}
+$cifra = $Pass;
+$Pass = cifrarSHA256($cifra);
+function cifrarSHA256($texto)
+{
+    return hash('sha256', $texto);
+}
 $codigoEmp = $_POST['codigoEmp'];
 $Desarrollador = $_POST['Desarrollador'];
 $Notas = $_POST['Notas'];
@@ -87,53 +88,52 @@ if (isset($_FILES['file'])) {
 
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
     $newFilename = $codigoEmp . '.' . $extension;
-    
+
     if (!is_dir("logos")) {
         mkdir("logos", 0777);
     }
-    
+
     move_uploaded_file($file['tmp_name'], "logos/" . $newFilename);
     $urllogo = "logos/" . $newFilename;
-    
+
 
     $conexion->begin_transaction();
 
-try {
-    // Primera consulta: Insertar en empresac
-    $queU = "INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo')";
-    if (!$conexion->query($queU)) {
-        throw new Exception("Error al insertar en empresac: " . $conexion->error);
-    }
+    try {
+        // Primera consulta: Insertar en empresac
+        $queU = "INSERT INTO empresac values ('$nomEmp', '$codigoEmp', '$temaEmp', '$CorreoE', '$nomRep', '$Pass', '$sitWeb', '$telCont', '$dirEmp', '$urllogo')";
+        if (!$conexion->query($queU)) {
+            throw new Exception("Error al insertar en empresac: " . $conexion->error);
+        }
 
-    // Segunda consulta: Insertar en usuarioss
-    $queU5 = "INSERT INTO usuarioss values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Desarrollador]','$_REQUEST[Notas]','$_REQUEST[Completo]')";
-    if (!$conexion->query($queU5)) {
-        throw new Exception("Error al insertar en usuarioss: " . $conexion->error);
-    }
-    
-    // Tercera consulta: Insertar en etiquetas
-    if ($etiquetaEmp == "standardLabelsChoose") {
-        $queU2 = "INSERT INTO etiquetas  VALUES('$nomEmp', '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInii','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
-    } else if ($etiquetaEmp == "customLabelsChoose") {
-        $queU2 = "INSERT INTO etiquetas VALUES('$nomEmp', '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
-    }
-    if (!$conexion->query($queU2)) {
-        throw new Exception("Error al insertar en etiquetas: " . $conexion->error);
-        
-    }
+        // Segunda consulta: Insertar en usuarioss
+        $queU5 = "INSERT INTO usuarioss values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Desarrollador]','$_REQUEST[Notas]','$_REQUEST[Completo]')";
+        if (!$conexion->query($queU5)) {
+            throw new Exception("Error al insertar en usuarioss: " . $conexion->error);
+        }
 
-    // Si todo ha ido bien, commit la transacción
-    $conexion->commit();
-    $codigoEmpresaJs = json_encode($codigoEmp);
-    echo "<br>Datos insertados correctamente <script>alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión.' + $codigoEmpresaJs);</script>";
-    //header('Location:index.php');
+        // Tercera consulta: Insertar en etiquetas
+        if ($etiquetaEmp == "standardLabelsChoose") {
+            $queU2 = "INSERT INTO etiquetas  VALUES('$nomEmp', '$Fechaa','$Folioo','$TipoNotaa','$NomClienn','$CorreoClienn','$TelefonoClienn','$DomiClienn','$FechaInii','$FechaTermm','$Servicioo','$Cantidadd','$AñadirServv', '$Consultarr', '$EliServv','$NomSerr', '$Descripcionn', '$PrecioUnii', '$CatServv', '$IDServv');";
+        } else if ($etiquetaEmp == "customLabelsChoose") {
+            $queU2 = "INSERT INTO etiquetas VALUES('$nomEmp', '$Fecha','$Folio','$TipoNota','$NomClien','$CorreoClien','$TelefonoClien','$DomiClien','$FechaIni','$FechaTerm','$Servicio','$Cantidad','$AñadirServ', '$Consultar', '$EliServ','$NomSer', '$Descripcion', '$PrecioUni', '$CatServ', '$IDServ');";
+        }
+        if (!$conexion->query($queU2)) {
+            throw new Exception("Error al insertar en etiquetas: " . $conexion->error);
+        }
 
-} catch (Exception $e) {
-    // Si hay un error, rollback la transacción
-    $conexion->rollback();
-    echo $e->getMessage();
-}
-
+        // Si todo ha ido bien, commit la transacción
+        $conexion->commit();
+        $codigoEmpresaJs = json_encode($codigoEmp);
+        echo "<script>
+        alert('DATOS GUARDADOS CORRECTAMENTE. Ya puedes Iniciar sesión. Código de empresa: ' + $codigoEmpresaJs);
+        window.location.href='index.php'; // Redirigir a la página deseada
+        </script>";
+    } catch (Exception $e) {
+        // Si hay un error, rollback la transacción
+        $conexion->rollback();
+        echo $e->getMessage();
+    }
 } else {
     echo "<script>alert('No hay archivo, comunicate con soporte');</script>";
 }
