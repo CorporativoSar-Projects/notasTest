@@ -7,6 +7,8 @@
 	$varsesion=$_SESSION['$user'];
 	$foliio=$_SESSION['$folio'];
 	$tema = $_SESSION['$Tema'];
+	
+	
 	//echo 'Tema:'.$Tema;
 	if($varsesion==null || $varsesion=='')
 	{
@@ -46,6 +48,38 @@
 	else{
 		$id=0;
 	}
+
+$sql = "SELECT Fecha,Folio, Tip_nota_Gene, Nom_Cliente, Corre_Cliente, Tele_Cliente, Domi_Cliente, Fecha_Ini, Fecha_Term, Servicio, Cantidad, Anadir_Serv FROM etiquetas";
+
+$resultado = $conexion->query($sql);
+
+if ($resultado) {
+    // Comprobar si se encontraron resultados
+    if ($resultado->num_rows > 0) {
+        // Iterar a través de los resultados y mostrar el valor de "Folio"
+        while ($fila = $resultado->fetch_assoc()) {
+			$fecha=$fila["Fecha"];
+            $folio = $fila["Folio"];
+			$Tip_nota_Gene= $fila["Tip_nota_Gene"];
+            $Nom_Cliente= $fila["Nom_Cliente"];
+            $Corre_Cliente = $fila["Corre_Cliente"];
+            $Tele_Cliente = $fila["Tele_Cliente"];
+            $Domi_Cliente= $fila["Domi_Cliente"];
+            $Fecha_Ini = $fila["Fecha_Ini"];
+            $Fecha_Term = $fila["Fecha_Term"];
+            $Servicio = $fila["Servicio"];
+            $Cantidad= $fila["Cantidad"];
+            $Anadir_Serv= $fila["Anadir_Serv"];
+            
+        }
+    } else {
+        echo "No se encontraron resultados.";
+    }
+    $resultado->free();
+} else {
+    echo "Error al ejecutar la consulta: " . $conexion->error;
+}
+	
 	
 	
 ?>
@@ -83,18 +117,18 @@
 		<table>
 			<tr>
 				<td>
-					<h5 style="text-align: left !important; margin-left: 100px !important;">FECHA: &nbsp&nbsp<?php $mes=array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); $m=$mes[date('n')-1]; $hoy = date("j")." de ".$m." de ".date("Y"); print_r($hoy);?>
+					<h5 style="text-align: left !important; margin-left: 100px !important;"><?php echo $fecha?>:&nbsp&nbsp<?php $mes=array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); $m=$mes[date('n')-1]; $hoy = date("j")." de ".$m." de ".date("Y"); print_r($hoy);?>
 				</td>				
 			</tr>
 		</table>
 		<br><br>
 		<form action="calculo.php" name="notas" method="GET">
-			<h5>FOLIO: &nbsp&nbsp<input type="text" name="folio" disabled value="<?php echo $foliio;?>"/>
+			<h5><?php echo $folio?>: &nbsp&nbsp<input type="text" name="folio" disabled value="<?php echo $foliio;?>"/>
 					
 					<input type="text" name="dataFolio" style="display: none;" value="<?php echo $foliio;?>">
 					</h5>
 					<br><br>
-			<h4>Tipo de nota a generar:</h4>
+			<h4><?php echo $Tip_nota_Gene?>:</h4>
 			<br>			
 			<select name="tipoNota" id="tipoNota">
 				<option value="sinIVA">Sin IVA</option>
@@ -105,13 +139,13 @@
 			<table id="customerDataTableNotas">
 				<tr>
 					<td>
-						<h5>Nombre del cliente&nbsp&nbsp
+						<h5><?php echo $Nom_Cliente?>&nbsp&nbsp 
 					</td>
 					<td>
 						<input type="text" name="nomCliente" required="true"/></h5>
 					</td>
 					<td>
-						<h5>Correo del Cliente&nbsp&nbsp
+						<h5><?php echo $Corre_Cliente?>&nbsp&nbsp
 					</td>
 					<td>
 						<input type="text" name="corrCliente" required="true"/></h5>
@@ -119,13 +153,13 @@
 				</tr>
 				<tr>
 					<td>
-						<h5>Telefono del cliente&nbsp&nbsp
+						<h5><?php echo $Tele_Cliente?>&nbsp&nbsp
 					</td>
 					<td>
 						<input type="tel" name="telefono" required="true"/></h5>
 					</td>
 					<td>
-						<h5>Domicilio del cliente&nbsp&nbsp
+						<h5><?php echo $Domi_Cliente?>&nbsp&nbsp
 					</td>
 					<td>
 						<input type="text" name="domCliente" required="true"/></h5>
@@ -133,13 +167,14 @@
 				</tr>
 				<tr>
 					<td>
-						<h5>Fecha de Inicio&nbsp&nbsp
+						<h5><?php echo  $Fecha_Ini?>&nbsp&nbsp
 					</td>
 					<td>
 						<input type="date" name="fechaI" required="true"></h5>
 					</td>
+
 					<td>
-						<h5>Fecha de Termino&nbsp&nbsp
+					<h5><?php echo   $Fecha_Term?>&nbsp&nbsp
 					</td>
 					<td>
 						<input type="date" name="fechaT" required="true"></h5>
@@ -151,8 +186,8 @@
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">SERVICIO</th>
-						<th scope="col">CANTIDAD</th>
+						<th scope="col"><?php echo  $Servicio  ?></th>
+						<th scope="col"><?php echo   $Cantidad?></th>
 					</tr>
 				</thead>
 				<tbody>
