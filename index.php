@@ -17,7 +17,8 @@
 	//	echo "<script>alert('Num Cols: $x');</script>";
 		session_start();
 		$_SESSION['$user']=$user;
-		header('Location:notas.php');		
+
+		header('Location:Inicio.php');		
 		/*echo "Valor 1 de S_SESSION: ".$_SESSION['$user'];*/
 		
 	}

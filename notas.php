@@ -76,7 +76,7 @@
 	<?php include 'menu.php'; ?>
 	<br><br>
 	<div id="divGen">
-		<h1><center>Bienvenido Corporativo SAR</center></h1>
+		<h1><center>Bienvenido <br><?php echo $_SESSION['$CodiEmp']?> </center></h1>
 	</div>
 	<br><br>
 	<center>
