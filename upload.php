@@ -107,7 +107,7 @@ if (isset($_FILES['file'])) {
         }
 
         // Segunda consulta: Insertar en usuarioss
-        $queU5 = "INSERT INTO usuarioss values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Prospeccion]','$_REQUEST[Notas]','$_REQUEST[Completo]')";
+        $queU5 = "INSERT INTO usuarioss values ('$nomRep','$ApePater','$ApeMater','$CorreoE','$Pass','$codigoEmp','$_REQUEST[Notas]','$_REQUEST[Prospeccion]','$_REQUEST[Completo]')";
         if (!$conexion->query($queU5)) {
             throw new Exception("Error al insertar en usuarioss: " . $conexion->error);
         }
